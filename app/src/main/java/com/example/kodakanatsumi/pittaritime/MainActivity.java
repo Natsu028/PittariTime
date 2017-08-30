@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 
      }
+     // コメント
      public void reset(View v){
          mTime = 10;
          mTimeTextView.setText(String.valueOf(mTime));
