@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         mHandler = new Handler();
     }
+
      public void start(View v){
          mTime = 10;
 
@@ -55,6 +56,77 @@ public class MainActivity extends AppCompatActivity {
 
          },0,1000);
      }
+
+     public void button(View v){
+
+         mTimer = new Timer(true);
+         mTimer.schedule(new TimerTask() {
+             @Override
+             public void run() {
+                 mHandler.post(new Runnable() {
+                     @Override
+                     public void run() {
+
+                         mTime -= 2;
+
+                         Log.d("timeの数字=", String.valueOf(mTime));
+
+                     }
+                 });
+
+             }
+
+         },0,1000);
+
+     }
+
+    public void button2(View v){
+
+        mTimer = new Timer(false);
+        mTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        mTime -= 5;
+
+                        Log.d("timeの数字=", String.valueOf(mTime));
+
+                    }
+                });
+
+            }
+
+        },0,1000);
+
+    }
+
+    public void button3(View v){
+
+        mTimer = new Timer(false);
+        mTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        mTime -= 8;
+
+                        Log.d("timeの数字=", String.valueOf(mTime));
+
+                    }
+                });
+
+            }
+
+        },0,1000);
+
+    }
+
+
      public void stop(View v){
          if (mTime == 0) {
 
@@ -67,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
 
          }
 
-
      }
+
      // コメント
      public void reset(View v){
          mTime = 10;
