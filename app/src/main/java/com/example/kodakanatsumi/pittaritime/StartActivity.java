@@ -15,6 +15,7 @@ public class StartActivity extends AppCompatActivity {
 
     public void button (View v){
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("minjtes", 10);
         startActivity(intent);
     }
 }
